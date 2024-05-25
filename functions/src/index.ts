@@ -74,7 +74,7 @@ export const getDailyShuffle = onRequest({cors: false},
     logger.info("Request for todays Daily Shuffle", {structuredData: true});
     const db = new Firestore();
     const querySnapshot = await db.collection("dailyShuffle").
-      orderBy("timestamp", "desc").limit(1).get();
+      orderBy("entryNumber", "desc").limit(1).get();
 
     const liteArray = [];
     for (let i = 0; i <= 23; i++) {
